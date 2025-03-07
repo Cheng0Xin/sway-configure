@@ -1,0 +1,203 @@
+@import "macchiato.css";
+
+@keyframes blink-warning {
+    70% {
+        color: @wm_icon_bg;
+    }
+
+    to {
+        color: @wm_icon_bg;
+        background-color: @pink;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+        color: @wm_icon_bg;
+    }
+
+    to {
+        color: @wm_icon_bg;
+        background-color: @red;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: "JetBrainsMono NF", "Roboto Mono", sans-serif;
+}
+
+/* The whole bar */
+window#waybar {
+    background: @base;
+    color: @text;
+    font-size: 24px;
+}
+
+/* Each module */
+#custom-pacman,
+#custom-menu,
+#custom-help,
+#custom-scratchpad,
+#custom-github,
+#custom-clipboard,
+#custom-zeit,
+#custom-dnd,
+#custom-valent,
+#custom-idle_inhibitor,
+#bluetooth,
+#battery,
+#clock,
+#cpu,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#backlight,
+#language,
+#custom-adaptive-light,
+#custom-sunset,
+#custom-playerctl,
+#custom-weather,
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#custom-scratchpad,
+#custom-menu,
+#workspaces button.focused,
+#clock {
+    color: @base;
+    background-color: @teal;
+}
+
+#custom-zeit.tracking {
+    background-color: @pink;
+}
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning {
+    color: @pink;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#cpu.warning {
+    color: @pink;
+}
+
+#cpu.critical {
+    color: @red;
+}
+
+#custom-menu {
+    padding-left: 8px;
+    padding-right: 13px;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.warning {
+    color: @pink;
+}
+
+#memory.critical {
+    color: @red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#mode {
+    background: @base;
+}
+
+#network.disconnected {
+    color: @pink;
+}
+
+#pulseaudio.muted {
+    color: @pink;
+}
+
+#temperature.critical {
+    color: @red;
+}
+
+#workspaces button {
+    border-top: 2px solid transparent;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: @subtext1;
+}
+
+#workspaces button.focused {
+    border-color: @teal;
+}
+
+#workspaces button.urgent {
+    border-color: @red;
+    color: @red;
+}
+
+#workspaces button:hover {
+    color: @maroon;
+}
+
+#custom-pacman {
+    color: @pink;
+}
+
+#bluetooth.disabled {
+    color: @pink;
+}
+
+#custom-wf-recorder {
+    color: @red;
+    padding-right: 10px;
+}
+
+#custom-valent.dangerously-empty {
+    color: @pink;
+}
