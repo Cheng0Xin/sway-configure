@@ -22,3 +22,12 @@ include $config_dir/core/system/*
 set $background $config_dir/background.jpg
 $bindsym $mod+b exec brave
 $bindsym $mod+e exec pcmanfm-qt
+ 
+# ------------------------------------
+#         Resolution
+# ------------------------------------
+
+output eDP-1 {
+  mode 1920x1200@60Hz
+  scale 1
+}
