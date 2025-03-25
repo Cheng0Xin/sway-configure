@@ -40,7 +40,7 @@
 window#waybar {
     background: @base;
     color: @text;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 /* Each module */
@@ -80,7 +80,7 @@ window#waybar {
 
 #custom-scratchpad,
 #custom-menu,
-#workspaces button.focused,
+#workspaces button.visible,
 #clock {
     color: @base;
     background-color: @teal;

@@ -32,7 +32,7 @@ set $script_path /usr/share/sway/scripts
 set $term wezterm
 set $term_cwd wezterm
 # set $term_cwd $term -D "$(swaycwd 2>/dev/null || echo $HOME)"
-# set $term_float footclient --app-id floating_shell --window-size-chars 82x25
+set $term_float footclient --app-id floating_shell --window-size-chars 120x50
 
 # Task manager
 set $task_manager $script_path/once.sh $term_float btop

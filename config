@@ -22,3 +22,12 @@ include $config_dir/core/system/*
 set $background $config_dir/background.jpg
 $bindsym $mod+b exec brave
 $bindsym $mod+e exec pcmanfm-qt
+
+# ------------------------------------
+#         Screen
+# ------------------------------------
+output eDP-1 res 2560x1440
+output DP-4 res 2560x1440
+output DP-5 res 2560x1440
+output eDP-1 scale 1.5
+output DP-5 transform 270
