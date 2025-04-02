@@ -17,39 +17,38 @@
     "height": 30,
     "position": "top",
 
-    "modules-left": ["custom/menu", "sway/workspaces", "custom/scratchpad"],
+    "modules-left": ["custom/menu", "clock" , "custom/scratchpad"],
     // "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather"],
-    "modules-center": ["custom/wf-recorder", "sway/mode"],
+    // "modules-center": ["custom/wf-recorder", "sway/mode"],
+    "modules-center": ["sway/workspaces"],
     "modules-right": [
         // informational
-        "sway/language",
-        "custom/github",
-        "custom/clipboard",
-        "custom/zeit",
-        "cpu",
+        // "sway/language",
+        // "custom/github",
+        // "custom/clipboard",
+        // "custom/zeit",
         // "temperature",
         // "memory",
-        "battery",
+        // "cpu",
+        "tray",
 
         // connecting
-        "network",
-        "bluetooth",
-        "custom/valent",
+        // "network",
+        // "bluetooth",
+        // "custom/valent",
 
         // media
-        "custom/playerctl",
-        "custom/idle_inhibitor",
-        "custom/dnd",
+        // "custom/playerctl",
+        // "custom/idle_inhibitor",
+        // "custom/dnd",
         "pulseaudio",
-        "backlight",
+        // "backlight",
 
         // system
         "custom/adaptive-light",
-        "custom/sunset",
-        "custom/pacman",
-
-        "tray",
-        "clock"
+        // "custom/sunset",
+        // "custom/pacman",
+        "battery"
     ],
 
     // -------------------------------------------------------------------------
@@ -70,7 +69,8 @@
 
     "clock": {
         "interval": 60,
-        "format": "{:%e %b %Y %H:%M}",
+        // "format": "{:%e %b %Y %H:%M}",
+        "format": "{:%e %b, %H:%M }",
         "tooltip": true,
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
         "on-click": "swaymsg exec \\$calendar"
