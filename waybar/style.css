@@ -29,7 +29,7 @@
 /* Reset all styles */
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 20px;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -40,7 +40,7 @@
 window#waybar {
     background: @base;
     color: @text;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 /* Each module */
@@ -70,8 +70,14 @@ window#waybar {
 #custom-playerctl,
 #custom-weather,
 #tray {
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    /* background: #24283b; */
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -80,11 +86,64 @@ window#waybar {
 
 #custom-scratchpad,
 #custom-menu,
-#workspaces button.focused,
-#clock {
+#workspaces button.visible {
     color: @base;
-    background-color: @teal;
+    background-color: @mauve;
 }
+
+/* For normal button */
+#workspaces button {
+    border-top: 2px solid transparent;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: @subtext1;
+}
+
+
+#workspaces button.focused {
+    /* border-color: @mauve; */
+}
+
+#workspaces button.urgent {
+    /* border-color: @red; */
+    /* color: @red; */
+    /* background-color: @mauve; */
+}
+
+#workspaces button:hover {
+    /* color: @maroon; */
+    /* background-color: @mauve; */
+}
+
+
+#custom-menu {
+    /* border-radius: 20px; */
+    /* margin-right: 20px; */
+    background: @crust;
+    color: @text;
+}
+
+.modules-left {
+    background-color: @crust;
+    color: @text;
+}
+
+.modules-center {
+    background-color: @crust;
+    color: @text;
+}
+
+.modules-right {
+    background-color: @crust;
+    color: @text;
+}
+
+/* #clock { */
+    /* color: @base; */
+    /* background-color: @teal; */
+/* } */
 
 #custom-zeit.tracking {
     background-color: @pink;
@@ -95,6 +154,7 @@ window#waybar {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
 
 #battery.warning {
     color: @pink;
@@ -161,28 +221,6 @@ window#waybar {
 
 #temperature.critical {
     color: @red;
-}
-
-#workspaces button {
-    border-top: 2px solid transparent;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: @subtext1;
-}
-
-#workspaces button.focused {
-    border-color: @teal;
-}
-
-#workspaces button.urgent {
-    border-color: @red;
-    color: @red;
-}
-
-#workspaces button:hover {
-    color: @maroon;
 }
 
 #custom-pacman {
