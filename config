@@ -19,15 +19,36 @@ include $config_dir/core/system/*
 # ------------------------------------
 #         Custom
 # ------------------------------------
-set $background $config_dir/background.jpg
-$bindsym $mod+b exec brave
+# set $background
+$bindsym $mod+b exec /home/xin/.local/bin/zen --no-remote
 $bindsym $mod+e exec pcmanfm-qt
+$bindsym $mod+Shift+m output "eDP-1" disable
+$bindsym $mod+m output "eDP-1" enable
 
 # ------------------------------------
 #         Screen
 # ------------------------------------
-output eDP-1 res 2560x1440
-output DP-4 res 2560x1440
-output DP-5 res 2560x1440
-output eDP-1 scale 1.5
-output DP-5 transform 270
+output eDP-1 {
+  res 2560x1440
+  scale 1.5
+}
+output DP-4 {
+  res 2560x1440
+  transform 270
+  position 0,0
+}
+output DP-6 {
+  res 2560x1440
+  position 1440,0
+  # transform 270
+}
+output DP-5 {
+  res 2560x1440
+}
+
+input "1133:45890:Keyboard_K380_Keyboard" {
+    xkb_options "altwin:swap_alt_win"
+}
+
+# fit
+exec_always swaybg -i $config_dir/background.jpg -m fill
